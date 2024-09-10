@@ -10,6 +10,7 @@ import org.springframework.web.bind.annotation.RestController;
 @RestController
 public class BiApplication {
 
+	
     @GetMapping("/analytics")
     public String getAnalytics() {
         // Dummy response for demonstration

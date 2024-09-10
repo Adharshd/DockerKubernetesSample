@@ -1,0 +1,20 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: crm-service-deployment
+spec:
+  replicas: 4
+  selector:
+    matchLabels:
+      app: crm-service
+  template:
+    metadata:
+      labels:
+        app: crm-service
+    spec:
+      containers:
+      - name: crm-service
+        image: crm-service:latest
+        imagePullPolicy: IfNotPresent
+        ports:
+        - containerPort: 8080
