@@ -1,0 +1,20 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: bi-service-deployment
+spec:
+  replicas: 3
+  selector:
+    matchLabels:
+      app: bi-service
+  template:
+    metadata:
+      labels:
+        app: bi-service
+    spec:
+      containers:
+      - name: bi-service
+        image: bi-service:latest
+        imagePullPolicy: IfNotPresent
+        ports:
+        - containerPort: 8080
